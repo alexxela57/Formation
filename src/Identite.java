@@ -7,9 +7,10 @@ public class Identite {
     private String prenom;
 
     // constructeur
-    public Identite (String nip, String n){
+    public Identite (String nip, String n, String p){
         this.NIP = nip;
         this.nom = n;
+        this.prenom = p;
 
     }
 
