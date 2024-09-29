@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class Groupe {
     private Map<Formation, List<Etudiant>> etudiants;
@@ -31,6 +28,33 @@ public class Groupe {
         }
     }
 
+
+    public double moyenneGroupeMatiere(String matiere) throws NoteInvalideException {
+        double moy = 0;
+        for (List<Etudiant> listeEtudiants: etudiants.values()){
+            for (Etudiant etudiant: listeEtudiants){
+                moy += etudiant.calculerMoyenneMatiere(matiere);
+            }
+            moy = moy/listeEtudiants.size();
+        }
+        moy = Math.round(moy * Math.pow(10,2)) / Math.pow(10,2);
+        return moy;
+    }
+
+    public double moyenneGeneraleGroupe() throws NoteInvalideException {
+        double moy = 0;
+        for (List<Etudiant> listeEtudiants: etudiants.values()){
+            for (Etudiant etudiant: listeEtudiants){
+                moy += etudiant.calculerMoyenneGenerale();
+            }
+            moy = moy/listeEtudiants.size();
+        }
+
+        moy = Math.round(moy * Math.pow(10,2)) / Math.pow(10,2);
+        return moy;
+    }
+
+
     public Map<Formation, List<Etudiant>> getEtudiants() {
         return etudiants;
     }
@@ -39,5 +63,16 @@ public class Groupe {
         return etudiants.get(formation);
     }
 
+    public void triAlpha() {
+        for (List<Etudiant> listeEtudiants : etudiants.values()) {
+            Collections.sort(listeEtudiants);
+        }
+    }
+
+    public void triAntiAlpha() {
+        for (List<Etudiant> listeEtudiants : etudiants.values()) {
+            Collections.sort(listeEtudiants, Collections.reverseOrder());
+        }
+    }
 
 }
