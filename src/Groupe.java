@@ -62,6 +62,17 @@ public class Groupe {
         return etudiants.get(formation);
     }
 
+    public void triAlpha() {
+        for (List<Etudiant> listeEtudiants : etudiants.values()) {
+            Collections.sort(listeEtudiants);
+        }
+    }
+
+    public void triAntiAlpha() {
+        for (List<Etudiant> listeEtudiants : etudiants.values()) {
+            Collections.sort(listeEtudiants, Collections.reverseOrder());
+        }
+    }
 
 
 }
