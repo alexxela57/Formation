@@ -13,8 +13,8 @@ class TestMoyenneGroupe {
     public void Initialisation() throws NoteInvalideException {
         groupe = new Groupe();
         formation = new Formation("Informatique");
-        etudiant1 = new Etudiant(new Identite("NIP123", "John"), formation);
-        etudiant2 = new Etudiant(new Identite("NIP456", "Alice"), formation);
+        etudiant1 = new Etudiant(new Identite("NIP123", "John", "Wayne"), formation);
+        etudiant2 = new Etudiant(new Identite("NIP456", "Alice", "Calamar"), formation);
 
 //ajout des matières
         formation.ajouterMatiere("maths",1);

@@ -16,9 +16,9 @@ public class TestTris {
         // Initialisation du groupe et ajout d'étudiants pour les tests
         groupe = new Groupe();
         info = new Formation("Informatique");
-        Etudiant b = new Etudiant(new Identite("02", "Bob"), info);
-        Etudiant c = new Etudiant(new Identite("03", "Clem"), info);
-        Etudiant a = new Etudiant(new Identite("01", "Amine"), info);
+        Etudiant b = new Etudiant(new Identite("02", "Bob", "Lennon"), info);
+        Etudiant c = new Etudiant(new Identite("03", "Clem", "Poulet"), info);
+        Etudiant a = new Etudiant(new Identite("01", "Amine", "boeuf"), info);
         groupe.ajouterEtudiant(b);
         groupe.ajouterEtudiant(c);
         groupe.ajouterEtudiant(a);
@@ -52,7 +52,7 @@ public class TestTris {
     public void testTriAlpha_AvecAutreFormation() {
         // Ajouter un étudiant d'une autre formation
         Formation autreFormation = new Formation("Mathématiques");
-        Etudiant math = new Etudiant(new Identite("04", "Mathieu"), autreFormation);
+        Etudiant math = new Etudiant(new Identite("04", "Mathieu", "Poisson"), autreFormation);
         groupe.ajouterEtudiant(math);
 
         // Appliquer le tri alphabétique
@@ -73,7 +73,7 @@ public class TestTris {
     public void testTriAntiAlpha_AvecAutreFormation() {
         // Ajouter un étudiant d'une autre formation
         Formation autreFormation = new Formation("Mathématiques");
-        Etudiant math = new Etudiant(new Identite("04", "Mathieu"), autreFormation);
+        Etudiant math = new Etudiant(new Identite("04", "Mathieu", "Grenier"), autreFormation);
         groupe.ajouterEtudiant(math);
 
         // Appliquer le tri alphabétique inverse

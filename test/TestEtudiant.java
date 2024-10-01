@@ -19,7 +19,7 @@ public class TestEtudiant {
         formation.ajouterMatiere("Physique", 2);
         formation.ajouterMatiere("Chimie", 1);
 
-        identite = new Identite("NIP123", "Clement");
+        identite = new Identite("NIP123", "Clement", "Loutre");
         etudiant = new Etudiant(identite, formation);
     }
 
